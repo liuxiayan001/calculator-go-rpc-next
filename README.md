@@ -34,7 +34,8 @@ npm install
 
 ```bash 
 npm run dev # 开发模式
-next build && next start # 生产构建
+npx next build # 构建
+npx next start # 运行
 ```
 ![img.png](img.png)
 
