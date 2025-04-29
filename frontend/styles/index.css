@@ -1,0 +1,225 @@
+/* 基础样式 */
+.calculator-container {
+  min-height: 100vh;
+  background: linear-gradient(to bottom right, #eff6ff, #f3e8ff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.calculator-box {
+  background: white;
+  border-radius: 1.5rem;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  padding: 1.5rem;
+  max-width: 500px;
+  width: 100%;
+}
+
+/* 标题样式 */
+.calculator-title {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.gradient-text {
+  background: linear-gradient(to right, #2563eb, #7c3aed);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* 输入区域 */
+.input-group {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr; /* 三列布局 */
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+}
+
+.operator-display {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #3b82f6;
+  padding: 0 1rem;
+  min-width: 60px;
+  text-align: center;
+  background: #f8fafc;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+
+.num-input {
+  padding: 0.75rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.active-input {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+/* 按钮样式 */
+.button-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+/* 清空按钮样式 */
+.clear-btn {
+  background: #ef4444;
+  color: white;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.clear-btn:hover {
+  background: #dc2626;
+}
+
+/* 调整按钮网格布局 */
+.button-grid {
+  grid-template-columns: repeat(4, 1fr);
+  /* 新增按钮后需要调整布局 */
+  grid-template-areas:
+    "clear clear backspace backspace"
+    "num7 num8 num9 operator-divide"
+    "num4 num5 num6 operator-multiply"
+    "num1 num2 num3 operator-subtract"
+    "num0 num-dot equals operator-add";
+}
+
+/* 具体按钮定位（根据实际需要调整） */
+
+
+.num-btn {
+  background: #f3f4f6;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.num-btn:hover {
+  background: #e5e7eb;
+}
+
+.operator-btn {
+  background: #dbeafe;
+  color: #2563eb;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.active-operator {
+  background: #2563eb !important;
+  color: white !important;
+}
+
+.calculate-btn {
+  background: #10b981;
+  color: white;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.calculate-btn:hover {
+  background: #059669;
+}
+
+/* 结果和错误提示 */
+.result-box {
+  background: #dbeafe;
+  border: 1px solid #93c5fd;
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  margin-top: 1rem;
+}
+
+.error-box {
+  background: #fee2e2;
+  border: 1px solid #fca5a5;
+  border-radius: 0.5rem;
+  padding: 0.75rem;
+  margin-top: 1rem;
+  color: #dc2626;
+}
+
+/* 动画 */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+.shake-animation {
+  animation: shake 0.4s ease-in-out;
+}
+
+/* 加载动画样式 */
+.loading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.95);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  z-index: 9999;
+  pointer-events: all;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* 按钮禁用样式 */
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

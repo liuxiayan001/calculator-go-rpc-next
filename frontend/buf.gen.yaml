@@ -1,0 +1,7 @@
+version: v1
+plugins:
+  - plugin: es
+    out: proto
+  - plugin: connect-es
+    out: proto
+
