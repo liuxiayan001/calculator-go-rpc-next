@@ -31,6 +31,7 @@ cd .\frontend\
 npm install
 ```
 3.启动服务
+
 ```bash 
 npm run dev # 开发模式
 next build && next start # 生产构建
@@ -38,7 +39,4 @@ next build && next start # 生产构建
 
 
 
-
-
-
-
+![image-20250429174606774](C:\Users\Admin\AppData\Roaming\Typora\typora-user-images\image-20250429174606774.png)
