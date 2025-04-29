@@ -36,7 +36,6 @@ npm install
 npm run dev # 开发模式
 next build && next start # 生产构建
 ```
+![img.png](img.png)
 
 
-
-![image-20250429174606774](C:\Users\Admin\AppData\Roaming\Typora\typora-user-images\image-20250429174606774.png)
